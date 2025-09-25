@@ -25,7 +25,7 @@ export default function WorkersPage() {
   if (!data) return <div>No data available.</div>;
 
   return (
-    <main className="container mx-auto px-4 py-8 mt-14">
+    <main className="container mx-auto px-4 py-8 ">
       <h1 className="text-3xl font-bold mb-8 text-center">Our Workers</h1>
 
       <WorkerFilters

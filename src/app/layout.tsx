@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   description: "Find and hire skilled workers easily with Worker App.",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/Logo.svg",
   },
 
   robots: {

@@ -14,7 +14,6 @@ export async function GET(request: NextRequest) {
       )
     ).sort(); // optional: sort alphabetically
 
-    console.log(servicesList);
 
     // -----------------------------
     // 1️⃣ WORKERS (with filters + pagination)

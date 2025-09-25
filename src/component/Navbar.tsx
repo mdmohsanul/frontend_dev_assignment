@@ -31,22 +31,21 @@ export default function Navbar() {
   }, [])
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 shadow-md ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-md'
-          : 'bg-white/90 backdrop-blur-sm'
+          ? "bg-white/95 backdrop-blur-md shadow-md"
+          : "bg-white/90 backdrop-blur-sm"
       }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <span className="text-xl font-bold text-gray-900">Worker</span>
           </Link>
 
           {/* Desktop Navigation */}
           <ul className="hidden md:flex items-center space-x-8">
-            {NAV_LINKS.map(link => (
+            {NAV_LINKS.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
@@ -58,33 +57,36 @@ export default function Navbar() {
             ))}
           </ul>
 
-          {/* Mobile Menu Button */}
+          {/* Hamburger */}
           <button
-             className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
-             onClick={() => setIsMobileMenuOpen(prev => !prev)}
-             aria-label="Toggle mobile menu"
-              aria-expanded={isMobileMenuOpen}
-               aria-controls="mobile-menu"
-           >             
-  {isMobileMenuOpen ? (
-    <RxCross1 className="w-6 h-6 text-gray-800" aria-hidden="true" />
-  ) : (
-    <RxHamburgerMenu className="w-6 h-6 text-gray-800" aria-hidden="true" />
-  )}
-</button>
+            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+            onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+            aria-label="Toggle mobile menu"
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-menu"
+          >
+            {isMobileMenuOpen ? (
+              <RxCross1 className="w-6 h-6 text-gray-800" aria-hidden="true" />
+            ) : (
+              <RxHamburgerMenu
+                className="w-6 h-6 text-gray-800"
+                aria-hidden="true"
+              />
+            )}
+          </button>
         </div>
 
-        {/* Mobile Navigation Menu */}
+        {/* Mobile Menu */}
         <div
           id="mobile-menu"
           className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${
             isMobileMenuOpen
-              ? 'max-h-96 opacity-100 pb-4'
-              : 'max-h-0 opacity-0 pb-0'
+              ? "max-h-96 opacity-100 pb-4"
+              : "max-h-0 opacity-0 pb-0"
           }`}
         >
           <ul className="flex flex-col space-y-4 pt-4 border-t border-gray-200">
-            {NAV_LINKS.map(link => (
+            {NAV_LINKS.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
@@ -95,10 +97,9 @@ export default function Navbar() {
                 </Link>
               </li>
             ))}
-            
           </ul>
         </div>
       </div>
     </nav>
-  )
+  );
 }
