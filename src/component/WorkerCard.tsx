@@ -41,6 +41,7 @@ const WorkerCard = ({
                  (max-width: 1280px) 33vw,
                  25vw"
           priority={priority}
+          unoptimized
         />
         {/* Subtle dark overlay on hover */}
         <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -59,7 +60,8 @@ const WorkerCard = ({
         <div className="flex items-center justify-between gap-2">
           <div>
             <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-              {currency}{worker.pricePerDay}
+              {currency}
+              {worker.pricePerDay}
             </span>
             <span className="text-gray-500 text-sm ml-1">/day</span>
           </div>
@@ -73,7 +75,7 @@ const WorkerCard = ({
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default WorkerCard
