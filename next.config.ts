@@ -14,6 +14,7 @@ const nextConfig: NextConfig = {
         pathname: "/api/portraits/**",
       },
     ],
+    domains: ["randomuser.me"],
   },
 };
 
