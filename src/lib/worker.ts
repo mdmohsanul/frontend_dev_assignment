@@ -29,8 +29,8 @@ export const fetchWorkers = async (params: FetchWorkersParams): Promise<WorkersR
       params: { type: "workers", ...params },
     })
     return response.data
-  } catch (error: any) {
+  } catch (error) {
     console.error("Failed to fetch workers:", error)
-    throw new Error(error?.response?.data?.message || "Failed to fetch workers")
+    throw new Error( "Failed to fetch workers")
   }
 }

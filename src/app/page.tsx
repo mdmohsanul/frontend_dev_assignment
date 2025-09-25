@@ -12,7 +12,7 @@ export default function WorkersPage() {
   const [minPrice, setMinPrice] = useState<number | undefined>(undefined);
   const [maxPrice, setMaxPrice] = useState<number | undefined>(undefined);
 
-  const { data, isLoading, isError, isPlaceholderData } = useWorkers({
+  const { data, isLoading, isError } = useWorkers({
     page,
     limit: 12,
     service,
